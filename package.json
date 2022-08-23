@@ -2,11 +2,12 @@
   "name": "lobinho",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "gen:theme-typings": "chakra-cli tokens src/styles/theme.ts",
+    "postinstall": "npm run gen:theme-typings"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.2.8",
@@ -18,6 +19,8 @@
     "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
+    "@chakra-ui/cli": "^2.1.6",
+    "@types/node": "^18.7.11",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.0.1",
